@@ -19,6 +19,6 @@ public class Main {
        //admin.printLectures();
        //admin.updateLectureInfo();
         //admin.printLectures();
-        
+        //admin.deneme(=)
     }
 }
