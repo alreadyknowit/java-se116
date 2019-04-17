@@ -20,5 +20,6 @@ public class Main {
        //admin.updateLectureInfo();
         //admin.printLectures();
         //admin.deneme(=)
+        //deneme23
     }
 }
