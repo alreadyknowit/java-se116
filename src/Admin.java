@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author <MR.GODLESSCHİCKEN>
+ * @author Godless
  */
 public class Admin {
     private String userName;
@@ -340,6 +340,7 @@ public class Admin {
                System.out.println("There is no such ID");
        }
    }
+   
 }
 
 

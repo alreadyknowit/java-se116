@@ -62,11 +62,17 @@ public class Instructor {
         System.out.println("ID       : " +instructorID);
       
     }
-     public void InstructorsLectures()
-    {
-        System.out.print("ID of Instructor:");
-        
-        
-    }
+     public void InstructorSchedule()
+     {
+         
+         System.out.printf("Days%10s%10s%10s%10s%10s%10s%10s%10s%10s%10s%10s%n",
+                 "|","Monday","|","Tuesday" ,"|", "Wendsday","|"
+                 ,"Thursday","|","Friday","|");
+         System.out.printf("%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n",
+                 "09:00-09:50  |","10:00-10:50  |","11:00-11:50  |", 
+                 "12:00-12:50  |","13:00-13:50  |","14:00-14:50  |","15:00-15:50  |",
+                 "16:00-16:50  |", "17:00-17:50  |");
+     }
+     
 
 }

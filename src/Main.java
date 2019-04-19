@@ -11,15 +11,15 @@
 public class Main {
     public static void main(String[] args) {
         Admin admin= new Admin();
-       admin.StudentRegistration();
-        admin.displayStudentList();
-       admin.updateStudentsInfo();
+      // admin.StudentRegistration();
+      //  admin.displayStudentList();
+      // admin.updateStudentsInfo();
         // admin.studentDelete();
        //admin.AddLectures();
        //admin.printLectures();
        //admin.updateLectureInfo();
         //admin.printLectures();
-        //admin.deneme(=)
-        //deneme23
+        Instructor i = new Instructor();
+        i.InstructorSchedule();
     }
 }
