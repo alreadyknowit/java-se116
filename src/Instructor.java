@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Godless Chicken
+ * @authors MrGodleSS, HighSocietyMFD, HeisenBerk29
  */
 public class Instructor {
   

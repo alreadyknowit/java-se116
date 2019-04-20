@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Godless Chicken
+ * @author MrGodleSS, HighSocietyMFD, HeisenBerk29
  */
 public class Lecture {
     private String lectureName;

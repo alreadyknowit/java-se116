@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Godless
+ * @author MrGodleSS, HighSocietyMFD, HeisenBerk29
  */
 public class Admin {
     private String userName;

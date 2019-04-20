@@ -8,7 +8,7 @@
 
 /**
  *
- * @author Godless Chicken
+ * @author MrGodleSS, HighSocietyMFD, HeisenBerk29
  */
 public class Student extends Lecture{
     
