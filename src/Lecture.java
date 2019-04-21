@@ -3,10 +3,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @authors :
- *< MrGodleSS
- * HighSocietyMFD
- * HeisenBerk29 > */
+ *@authors :
+ *MrGodleSS
+ *HighSocietyMFD
+ *HeisenBerk29 
+ */
 public class Lecture {
     private String lectureName;
     private String lectureID;

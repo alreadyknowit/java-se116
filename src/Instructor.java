@@ -3,19 +3,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @authors :
- *< MrGodleSS
- * HighSocietyMFD
- * HeisenBerk29 >
+ *@authors :
+ *MrGodleSS
+ *HighSocietyMFD
+ *HeisenBerk29
  */
-public class Instructor {
+public class Instructor extends Admin{
   
     private String name;
     private int instructorID;
     private ArrayList<Instructor> instructors = new ArrayList<Instructor>();
     private static int instructorCounter;
-    Scanner sc = new Scanner(System.in);
-
+  
     public Instructor(String name, int instructorID) {
         this.name = name;
         this.instructorID = instructorID;
@@ -68,6 +67,10 @@ public class Instructor {
                  "09:00-09:50  |","10:00-10:50  |","11:00-11:50  |", 
                  "12:00-12:50  |","13:00-13:50  |","14:00-14:50  |","15:00-15:50  |",
                  "16:00-16:50  |", "17:00-17:50  |");
+     }
+     public void Scedule(Schedule sc)
+     {
+         
      }
      
 

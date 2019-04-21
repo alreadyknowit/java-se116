@@ -1,11 +1,11 @@
 
 /**
-  * @authors :
- *< MrGodleSS
- * HighSocietyMFD
- * HeisenBerk29 >
+ *@authors :
+ *MrGodleSS
+ *HighSocietyMFD
+ *HeisenBerk
  */
-public class Student extends Lecture{
+public class Student extends Instructor{
     
    private String FullName,department,mailAdress;
    private int age,yearOfStarting,gradation;

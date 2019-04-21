@@ -1,9 +1,9 @@
 
 /**
- * @authors :
- *< MrGodleSS
- * HighSocietyMFD
- * HeisenBerk29 >
+ *@authors :
+ *MrGodleSS
+ *HighSocietyMFD
+ *HeisenBerk29
  */
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +16,9 @@ public class Main {
        //admin.printLectures();
        //admin.updateLectureInfo();
         //admin.printLectures();
-        Instructor i = new Instructor();
-        i.InstructorSchedule();
+     //   Instructor i = new Instructor();
+     //   i.InstructorSchedule();
+     Instructor ins = new Instructor();
+    new Schedule();
     }
 }

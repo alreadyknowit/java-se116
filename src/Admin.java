@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
-  * @authors :
- *< MrGodleSS
- * HighSocietyMFD
- * HeisenBerk29 >
+ *@authors :
+ *MrGodleSS
+ *HighSocietyMFD
+ *HeisenBerk29
  */
 public class Admin {
     private String userName;
@@ -57,7 +57,6 @@ public class Admin {
     }
    
     public  void setAdminInfo(){
-        Scanner sc = new Scanner(System.in);
       
         while(true)
         {
@@ -86,7 +85,7 @@ public class Admin {
     {
         while(true)
         {
-      Scanner sc = new Scanner(System.in);
+    
     String tempFullName,tempDepartment,tempMailAdress;
     int tempAge,tempYearOfStarting,tempGradation;
     long tempPhoneNumber;
@@ -172,8 +171,6 @@ public class Admin {
     
     public void studentDelete()
     {
-        Scanner sc = new Scanner(System.in);
-        
         System.out.println("Which students do you want to delete(enter porfile order)");
         getStudents().remove(sc.nextInt()-1);
         System.out.println("Student is removed successfully!");
@@ -203,7 +200,7 @@ public class Admin {
     public void DetermineStudentID()
     {
        
-       Scanner sc = new Scanner(System.in);
+    
        Student obj = new Student();
       
        label: while(true)
