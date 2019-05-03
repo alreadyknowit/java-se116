@@ -28,6 +28,7 @@ public class Admin extends Users implements IAdmin{
         this.password="123";
     }
 
+    
     public String getPassword() {
         return password;
     }
@@ -94,21 +95,21 @@ public class Admin extends Users implements IAdmin{
          tempFullName=sc.nextLine();
 
 
-            System.out.println("Faculty:");
-            System.out.println("Press 1 for Engineering!");
-            System.out.println("Press 2 for Law!");
-            System.out.println("Press 3 for Architecture!");
-            System.out.println("Press 4 for Medicine!");
-            int x=sc.nextInt();
+            System.out.print("Faculty:");
+             String response=sc.nextLine();
 
-            if(x==1|| x==2||x==3){
-                System.out.println("Please enter the scholarship amount: ");
+            if(response.contains("Engineering")|| response.contains("engineering")
+                    ||response.contains("law")|| response.contains("Law")
+                    ||response.contains("Art")||response.contains("art")
+                    ||response.contains("Business")||response.contains("business")){
+                System.out.print("Scholarship Amount:");
                 scholarship=sc.nextDouble();
                 tempPricetoPay=39750-(scholarship/100*39750);
                 sc.nextLine();
+                
             }
 
-            else if(x==4){
+            else if(response.contains("medicine")||response.contains("Medicine")){
                 System.out.println("Please enter the scholarship amount: ");
                 scholarship=sc.nextDouble();
                 tempPricetoPay=52500-(scholarship/100*52500);
@@ -169,18 +170,18 @@ public class Admin extends Users implements IAdmin{
         sc.nextLine();
          System.out.println("Do you want add more students Yes/No?");  
        
-         String response=sc.nextLine();
-            if(response.equals("N") 
-                    || response.equals("n")
-                    || response.equals("No")
-                    || response.equals("no"))
+         String response2=sc.nextLine();
+            if(response2.equals("N") 
+                    || response2.equals("n")
+                    || response2.equals("No")
+                    || response2.equals("no"))
             {
                  break ;
             }
-            else if(response.equals("Y") 
-                    || response.equals("y")
-                    || response.equals("Yes")
-                    || response.equals("yes"))
+            else if(response2.equals("Y") 
+                    || response2.equals("y")
+                    || response2.equals("Yes")
+                    || response2.equals("yes"))
             {
                  System.out.println("Continue...");
             }
@@ -194,7 +195,6 @@ public class Admin extends Users implements IAdmin{
         System.out.println("Here ara all the students:");
         for(int i=0;i<this.getStudents().size();i++)
         {
-            //Student listesi boş is belirtsin
             System.out.println("");
             System.out.println("Student#"+(i+1)+" Profile");
             System.out.println("=============");

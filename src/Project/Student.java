@@ -19,9 +19,9 @@ public class Student extends Users{
   
    private static int studentCounter;
 
-    public Student(String NAME, String department, String mailAdress, int age,
+    public Student(String name, String department, String mailAdress, int age,
             int yearOfStarting, int gradation, long ID, long phoneNumber, double priceToPay,double scholarship) {
-        super(NAME,ID);
+        super(name,ID);
         this.department = department;
         this.mailAdress = mailAdress;
         this.age = age;
@@ -108,7 +108,14 @@ public class Student extends Users{
          System.out.println("Mail: " +mailAdress);
          System.out.println("Phone Number: " +phoneNumber);
          System.out.println("Scholarship: %"+scholarship);
-         System.out.println("Price to pay: "+priceToPay);
+         if(scholarship==100)
+         {
+             System.out.println("Tuition: Full Scholarship");
+         }
+         else{
+             System.out.println("Tuition: "+priceToPay);
+         }
+         
      }
     
 }
