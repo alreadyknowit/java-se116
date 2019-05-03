@@ -14,12 +14,13 @@ public class Student extends Users{
    private String department,mailAdress;
    private int age,yearOfStarting,gradation;
    private long phoneNumber;
+   private double priceToPay,scholarship;
   
   
    private static int studentCounter;
 
     public Student(String NAME, String department, String mailAdress, int age,
-            int yearOfStarting, int gradation, long ID, long phoneNumber) {
+            int yearOfStarting, int gradation, long ID, long phoneNumber, double priceToPay,double scholarship) {
         super(NAME,ID);
         this.department = department;
         this.mailAdress = mailAdress;
@@ -27,6 +28,8 @@ public class Student extends Users{
         this.yearOfStarting = yearOfStarting;
         this.gradation = gradation;
         this.phoneNumber = phoneNumber;
+        this.priceToPay=priceToPay;
+        this.scholarship=scholarship;
     }
     
    
@@ -39,6 +42,7 @@ public class Student extends Users{
         this.yearOfStarting = 0;
         this.gradation = 0;
         this.phoneNumber =0;
+        this.priceToPay=0;
        
    }
 
@@ -103,6 +107,8 @@ public class Student extends Users{
          System.out.println("Gradiation: " +getGradation());
          System.out.println("Mail: " +mailAdress);
          System.out.println("Phone Number: " +phoneNumber);
+         System.out.println("Scholarship: %"+scholarship);
+         System.out.println("Price to pay: "+priceToPay);
      }
     
 }

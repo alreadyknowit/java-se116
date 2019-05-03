@@ -86,34 +86,59 @@ public class Admin extends Users implements IAdmin{
     String tempFullName,tempDepartment,tempMailAdress;
     int tempAge,tempYearOfStarting,tempGradation;
     long tempPhoneNumber,tempID=0;
+    double tempPricetoPay=0,scholarship=0;
     
          System.out.println("STUDENT REGİSTRATİON");
          System.out.println("=============");
          System.out.print("Full Name: ");
          tempFullName=sc.nextLine();
+
+
+            System.out.println("Faculty:");
+            System.out.println("Press 1 for Engineering!");
+            System.out.println("Press 2 for Law!");
+            System.out.println("Press 3 for Architecture!");
+            System.out.println("Press 4 for Medicine!");
+            int x=sc.nextInt();
+
+            if(x==1|| x==2||x==3){
+                System.out.println("Please enter the scholarship amount: ");
+                scholarship=sc.nextDouble();
+                tempPricetoPay=39750-(scholarship/100*39750);
+                sc.nextLine();
+            }
+
+            else if(x==4){
+                System.out.println("Please enter the scholarship amount: ");
+                scholarship=sc.nextDouble();
+                tempPricetoPay=52500-(scholarship/100*52500);
+                sc.nextLine();
+            }
+
          
          System.out.print("Department:");
          tempDepartment=sc.nextLine();
+
          
          System.out.print("Age: ");
          tempAge=sc.nextInt();
-         sc.nextLine();
+
          
          System.out.print("Year Of Staring: " );
          tempYearOfStarting=sc.nextInt();
-         sc.nextLine();
+
          
          System.out.print("Gradation: " );
          tempGradation=sc.nextInt();
-         sc.nextLine();
+
          System.out.print("Mail: ");
-         tempMailAdress=sc.nextLine();
+         tempMailAdress=sc.next();
          
          System.out.print("Phone Number: ");
          tempPhoneNumber=sc.nextLong();
          
             Users tempStudent= new Student(tempFullName,tempDepartment,tempMailAdress,
-                 tempAge,tempYearOfStarting,tempGradation,tempID,tempPhoneNumber);
+                 tempAge,tempYearOfStarting,tempGradation,tempID,tempPhoneNumber,tempPricetoPay,scholarship);
           students.add((Student) tempStudent);
          
          System.out.println("Student ID is determining...");
@@ -180,7 +205,7 @@ public class Admin extends Users implements IAdmin{
     @Override
     public void studentDelete()
     {
-        System.out.println("Which students do you want to delete(enter porfile order)");
+        System.out.println("Which students do you want to delete(enter profile order)");
         getStudents().remove(sc.nextInt()-1);
         System.out.println("Student is removed successfully!");
         
@@ -267,7 +292,7 @@ public class Admin extends Users implements IAdmin{
                         + "230"+ students.get(students.size()-1).getGradation());
                  break  label;
             default:
-                System.out.println("Oops!Something went wrong.ID could not be determine(Check the department)");
+                System.out.println("Oops!Something went wrong.ID could not be determined(Check the department)");
                 System.out.print("Department: ");
                 students.get(students.size()-1).setDepartment(sc.nextLine());
                 break;
