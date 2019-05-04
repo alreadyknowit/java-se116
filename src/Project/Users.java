@@ -22,7 +22,7 @@ public abstract class Users {
         this.name = name;
     }
 
-    public void setID(long ID) throws ArithmeticException {
+    public void setID(long ID) {
         
         this.ID = ID;
     }

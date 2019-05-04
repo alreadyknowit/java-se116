@@ -1,6 +1,5 @@
 package Project;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -17,8 +16,8 @@ public class Admin extends Users implements IAdmin{
     
      Scanner sc = new Scanner(System.in);
 
-    public Admin(String NAME,long ID, String password) {
-        super(NAME,ID);
+    public Admin(String name,long ID, String password) {
+        super(name,ID);
         
         this.password=password;
     }
@@ -67,7 +66,6 @@ public class Admin extends Users implements IAdmin{
              {
               System.out.println("The password succesfully changed.");
                  setPassword(a);
-                 System.out.println(getPassword());
               break;
              }
              break;
@@ -82,8 +80,7 @@ public class Admin extends Users implements IAdmin{
     {
         while(true)
         {
-          
-    
+            
     String tempFullName,tempDepartment,tempMailAdress;
     int tempAge,tempYearOfStarting,tempGradation;
     long tempPhoneNumber,tempID=0;
@@ -93,30 +90,41 @@ public class Admin extends Users implements IAdmin{
          System.out.println("=============");
          System.out.print("Full Name: ");
          tempFullName=sc.nextLine();
-
-
-            System.out.print("Faculty:");
+         
+             while(true)
+             {
+             System.out.print("Faculty:");
              String response=sc.nextLine();
-
-            if(response.contains("Engineering")|| response.contains("engineering")
+             
+             if(response.contains("Engineering")|| response.contains("engineering")
                     ||response.contains("law")|| response.contains("Law")
                     ||response.contains("Art")||response.contains("art")
-                    ||response.contains("Business")||response.contains("business")){
+                    ||response.contains("Business")||response.contains("business"))
+                 
+             { 
                 System.out.print("Scholarship Amount:");
                 scholarship=sc.nextDouble();
                 tempPricetoPay=39750-(scholarship/100*39750);
                 sc.nextLine();
+                break;
                 
             }
 
-            else if(response.contains("medicine")||response.contains("Medicine")){
-                System.out.println("Please enter the scholarship amount: ");
+            else if(response.contains("medicine")||response.contains("Medicine"))
+            {
+                System.out.print("Scholarship amount: ");
                 scholarship=sc.nextDouble();
                 tempPricetoPay=52500-(scholarship/100*52500);
                 sc.nextLine();
+                break;
+            }
+            else{
+                System.out.println("There is no such faculty.Try again...");
             }
 
-         
+                 
+             }
+             
          System.out.print("Department:");
          tempDepartment=sc.nextLine();
 
@@ -143,28 +151,12 @@ public class Admin extends Users implements IAdmin{
           students.add((Student) tempStudent);
          
          System.out.println("Student ID is determining...");
-         
-         //********************************DÖNGÜ SONSUZA KADAR SÜRÜYOR***************************************************************
-         
-         boolean continueLoop=true;
-           
-            while(continueLoop){
-                try {
-                    DetermineStudentID();
-                    System.out.println("Please confirm the ID...");
+         DetermineStudentID();
+        
+         System.out.println("Please confirm the ID...");
          tempID=sc.nextLong();
+         
          students.get(students.size()-1).setID(tempID);
-         continueLoop=false;
-                } 
-                catch (ArithmeticException arithmeticException) {
-                    System.err.println("Exception: " +arithmeticException);
-                    System.out.println("");
-                }
-                catch(InputMismatchException inputMismatchException){
-                    System.err.println("Exception: " +inputMismatchException);
-            }
-            }
-            
         System.out.println("Student is registered successfully!");
            
         sc.nextLine();

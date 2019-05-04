@@ -2,6 +2,8 @@
 
 package Project;
 
+import java.util.ArrayList;
+
 /**
  *@authors :
  *MrGodleSS
@@ -32,7 +34,6 @@ public class Student extends Users{
         this.scholarship=scholarship;
     }
     
-   
    public Student()
    {
          super("NoName",0);
