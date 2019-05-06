@@ -13,16 +13,18 @@ import java.util.ArrayList;
 
 public class Student extends Users{
     
-   private String department,mailAdress;
+   private String department,mailAdress,Faculty;
    private int age,yearOfStarting,gradation;
    private long phoneNumber;
    private double priceToPay,scholarship;
+   ArrayList<Lecture> selectedLec;
   
   
    private static int studentCounter;
 
     public Student(String name, String department, String mailAdress, int age,
-            int yearOfStarting, int gradation, long ID, long phoneNumber, double priceToPay,double scholarship) {
+            int yearOfStarting, int gradation, long ID, long phoneNumber, double priceToPay,double scholarship,ArrayList<Lecture> selectedLec,
+    String Faculty) {
         super(name,ID);
         this.department = department;
         this.mailAdress = mailAdress;
@@ -32,6 +34,8 @@ public class Student extends Users{
         this.phoneNumber = phoneNumber;
         this.priceToPay=priceToPay;
         this.scholarship=scholarship;
+        this.selectedLec=selectedLec;
+        this.Faculty=Faculty;
     }
     
    public Student()
@@ -49,6 +53,10 @@ public class Student extends Users{
 
     public String getDepartment() {
         return department;
+    }
+
+    public String getFaculty() {
+        return Faculty;
     }
 
     public void setDepartment(String department) {
@@ -111,7 +119,6 @@ public class Student extends Users{
          System.out.println("Mail: " +mailAdress);
          System.out.println("Phone Number: " +phoneNumber);
          System.out.println("Scholarship: %"+scholarship);
-         
          if(scholarship==100)
          {
              System.out.println("Tuition: Full Scholarship");

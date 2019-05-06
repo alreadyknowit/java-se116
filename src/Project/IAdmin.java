@@ -19,6 +19,6 @@ public interface IAdmin {
      public void DetermineStudentID();
      public void AddLectures();
      public void printLectures();
-     public void updateLectureInfo();
+
      
 }

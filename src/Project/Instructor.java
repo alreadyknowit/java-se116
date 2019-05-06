@@ -23,13 +23,6 @@ public class Instructor extends Users{
         this.YearofStarting=YearofStarting;
         instructorCounter=0;
     }
-<<<<<<< HEAD
-    public Instructor()
-    {
-        
-    }
-    
-=======
 
     public String getFaculty() {
         return Faculty;
@@ -39,7 +32,6 @@ public class Instructor extends Users{
         return YearofStarting;
     }
 
->>>>>>> fcb9b5e971742880f2200c572fb320c70942048f
     public static int getInstructorCounter() {
         return instructorCounter;
     }
@@ -66,4 +58,8 @@ public class Instructor extends Users{
                  "12:00-12:50  |","13:00-13:50  |","14:00-14:50  |","15:00-15:50  |",
                  "16:00-16:50  |", "17:00-17:50  |");
      }
+
+
+    
+
 }

@@ -1,7 +1,6 @@
 package Project;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.RandomAccess;
 import java.util.Scanner;
 
 
@@ -14,7 +13,13 @@ import java.util.Scanner;
 public class Admin extends Users implements IAdmin{
     private String password;
     public static ArrayList<Student> students = new ArrayList<>();
-    public static ArrayList<Lecture> lectures= new ArrayList<>();
+    public static ArrayList<Lecture> allLectures=new ArrayList<>();
+    public static ArrayList<Lecture> engineeringLectures= new ArrayList<>();
+    public static ArrayList<Lecture> lawLectures= new ArrayList<>();
+    public static ArrayList<Lecture> medicineLectures= new ArrayList<>();
+    public static ArrayList<Lecture> businessLectures= new ArrayList<>();
+    public static ArrayList<Lecture> artLectures= new ArrayList<>();
+
     public static ArrayList<Instructor> instructors=new ArrayList<>();
 
 
@@ -46,12 +51,25 @@ public class Admin extends Users implements IAdmin{
     public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
-    public ArrayList<Lecture> getLectures() {
-        return lectures;
+
+    public static void setEngineeringLectures(ArrayList<Lecture> engineeringLectures) {
+        Admin.engineeringLectures = engineeringLectures;
     }
 
-    public void setLectures(ArrayList<Lecture> lectures) {
-        this.lectures = lectures;
+    public static void setLawLectures(ArrayList<Lecture> lawLectures) {
+        Admin.lawLectures = lawLectures;
+    }
+
+    public static void setMedicineLectures(ArrayList<Lecture> medicineLectures) {
+        Admin.medicineLectures = medicineLectures;
+    }
+
+    public static void setBusinessLectures(ArrayList<Lecture> businessLectures) {
+        Admin.businessLectures = businessLectures;
+    }
+
+    public static void setArtLectures(ArrayList<Lecture> artLectures) {
+        Admin.artLectures = artLectures;
     }
 
     public void setInstructors(ArrayList<Instructor> instructors) {
@@ -93,6 +111,7 @@ public class Admin extends Users implements IAdmin{
     int tempAge,tempYearOfStarting,tempGradation;
     long tempPhoneNumber,tempID=0;
     double tempPricetoPay=0,scholarship=0;
+    String response;
 
          System.out.println("STUDENT REGISTRATION");
          System.out.println("=============");
@@ -102,7 +121,7 @@ public class Admin extends Users implements IAdmin{
              while(true)
              {
              System.out.print("Faculty:");
-             String response=sc.nextLine();
+             response=sc.nextLine();
 
              if(response.contains("Engineering")|| response.contains("engineering")
                     ||response.contains("law")|| response.contains("Law")
@@ -155,7 +174,7 @@ public class Admin extends Users implements IAdmin{
          tempPhoneNumber=sc.nextLong();
 
             Users tempStudent= new Student(tempFullName,tempDepartment,tempMailAdress,
-                 tempAge,tempYearOfStarting,tempGradation,tempID,tempPhoneNumber,tempPricetoPay,scholarship);
+                 tempAge,tempYearOfStarting,tempGradation,tempID,tempPhoneNumber,tempPricetoPay,scholarship,null,response);
           students.add((Student) tempStudent);
 
          System.out.println("Student ID is determining...");
@@ -308,16 +327,38 @@ public class Admin extends Users implements IAdmin{
        while(true)
         {
             Lecture lc = new Lecture();
-          System.out.print("Lecture name: ");
-          lc.setLectureName(sc.nextLine());
-          System.out.print("Lecture ID: ");
-          lc.setLectureID(sc.nextLine());
 
-          lectures.add(lc);
+            System.out.println("Please Select which faculty's lecture will be added");
+            System.out.println("==============");
+            System.out.println("1)Engineering");
+            System.out.println("2)Medicine");
+            System.out.println("3)Law");
+            System.out.println("4)Business");
+            System.out.println("5)Art");
+            System.out.println("==============");
+            int tempselect=sc.nextInt();
+            System.out.print("Lecture name: ");
+            lc.setLectureName(sc.next());
+            System.out.print("Lecture ID: ");
+            lc.setLectureID(sc.next());
+            if(tempselect==1)
+                engineeringLectures.add(lc);
+            else if(tempselect==2)
+                medicineLectures.add(lc);
+            else if(tempselect==3)
+                lawLectures.add(lc);
+            else if(tempselect==4)
+                businessLectures.add(lc);
+            else if(tempselect==5)
+                artLectures.add(lc);
 
+            allLectures.add(lc);
+
+            System.out.println();
           System.out.println("Lecture added successfully!");
+            System.out.println();
 
-          System.out.println("Do you want to add more lecture?");
+          System.out.println("Do you want to add more lectures?");
 
           response=sc.nextLine();
             if(response.equals("N")
@@ -334,6 +375,7 @@ public class Admin extends Users implements IAdmin{
             {
                  System.out.println("Continue...");
             }
+
         }
     }
 
@@ -343,37 +385,48 @@ public class Admin extends Users implements IAdmin{
        Lecture lc = new Lecture();
        System.out.println("            >>>LECTURES LIST<<<");
 
-       for(int i=0;i<lectures.size();i++)
-       {
-           System.out.println("Lecture#"+(i+1));
-           lectures.get(i).LectureInfo();
-       }
-   }
+       System.out.println("Please Select which lectures you want to display");
+       System.out.println("==============");
+       System.out.println("1)Engineering lectures");
+       System.out.println("2)Medicine lectures");
+       System.out.println("3)Law lectures ");
+       System.out.println("4)Business lectures");
+       System.out.println("5)Art lectures ");
+       System.out.println("6)All lectures");
+       System.out.println("==============");
+       int tempselect=sc.nextInt();
 
-    @Override
-   public void updateLectureInfo()
-   {
-       System.out.print("Lecture ID: ");
-       String keyword=sc.nextLine();
-
-       for(int i=0;i<lectures.size();i++)
-       {
-           if(keyword.equals(lectures.get(i).getLectureID()))
-           {
-              lectures.get(i).LectureInfo();
-
-            System.out.println("Please reset your information");
-
-                System.out.print("Name : ");
-                lectures.get(i).setLectureName(sc.nextLine());
-                System.out.print("Lecture ID:");
-                lectures.get(i).setLectureID(sc.nextLine());
-
+       switch (tempselect){
+           case 1:{
+               for(int i=0;i<engineeringLectures.size();i++)
+                   engineeringLectures.get(i).LectureInfo(); }
+           case 2:{
+               for(int i=0;i<medicineLectures.size();i++)
+           medicineLectures.get(i).LectureInfo();}
+           case 3:{
+               for(int i=0;i<lawLectures.size();i++)
+                   lawLectures.get(i).LectureInfo();}
+           case 4:{
+               for(int i=0;i<businessLectures.size();i++)
+                   businessLectures.get(i).LectureInfo();
            }
-           else
-               System.out.println("There is no such ID");
+           case 5:{
+               for(int i=0;i<artLectures.size();i++)
+                   artLectures.get(i).LectureInfo();
+           }
+           case 6:{
+               for(int i=0;i<allLectures.size();i++){
+                   allLectures.get(i).LectureInfo();
+               }
+           }
        }
+
+
+
    }
+
+
+
 
     public void InstructorRegistration() {
         while (true) {
@@ -389,13 +442,34 @@ public class Admin extends Users implements IAdmin{
             tempFaculty=sc.nextLine();
             System.out.println("Lecture:");
             String x=sc.next();
-            for(int i=0;i<lectures.size();i++){
-            if(x.equals(lectures.get(i).getLectureID())){
-                tempLecture=lectures.get(i).getLectureID();
-            }
+            for(int i=0;i<allLectures.size();i++){
+            if(x.equals(allLectures.get(i).getLectureID())){
+                tempLecture=allLectures.get(i).getLectureID();
+            }}
+            for(int i=0;i<engineeringLectures.size();i++){
+                if(x.equals(engineeringLectures.get(i).getLectureID())){
+                    tempLecture=engineeringLectures.get(i).getLectureID();
+                }}
+            for(int i=0;i<medicineLectures.size();i++){
+                if(x.equals(medicineLectures.get(i).getLectureID())){
+                    tempLecture=medicineLectures.get(i).getLectureID();
+                }}
+            for(int i=0;i<artLectures.size();i++){
+                if(x.equals(artLectures.get(i).getLectureID())){
+                    tempLecture=artLectures.get(i).getLectureID();
+                }}
+            for(int i=0;i<businessLectures.size();i++){
+                if(x.equals(businessLectures.get(i).getLectureID())){
+                    tempLecture=businessLectures.get(i).getLectureID();
+                }}
+            for(int i=0;i<lawLectures.size();i++){
+                if(x.equals(businessLectures.get(i).getLectureID())){
+                    tempLecture=businessLectures.get(i).getLectureID();
+                }}
+
             System.out.println("Starting Year:");
             tempStartYear= sc.nextInt();
-            }
+
             Users tempInstructor= new Instructor(tempName,tempId,tempLecture,tempFaculty,tempStartYear);
             instructors.add((Instructor) tempInstructor);
             DetermineInstructorID();
