@@ -94,11 +94,13 @@ public class Student extends Users{
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
     public static int getStudentCounter() {
         return studentCounter;
     }
-    
-     public void studentPrint()
+
+
+    public void studentPrint()
      { 
          System.out.println("Name: " +getName());
          System.out.println("ID: " +getID());
