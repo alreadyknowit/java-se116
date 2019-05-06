@@ -9,36 +9,25 @@ import java.util.ArrayList;
  */
 public class Instructor extends Users{
   
-
+    private ArrayList<Instructor> instructors = new ArrayList<>();
     private static int instructorCounter;
 
-    private String Lecture;
-    private String Faculty;
-    private int YearofStarting;
-
-    public Instructor(String NAME, long ID,String Lecture,String Faculty,int YearofStarting) {
+    public Instructor(String NAME, long ID, ArrayList<Instructor> instructors) {
         super(NAME, ID);
-        this.Lecture=Lecture;
-        this.Faculty=Faculty;
-        this.YearofStarting=YearofStarting;
+        this.instructors=instructors;
         instructorCounter=0;
     }
-
-    public String getFaculty() {
-        return Faculty;
-    }
-
-    public int getYearofStarting() {
-        return YearofStarting;
-    }
-
+    
     public static int getInstructorCounter() {
         return instructorCounter;
     }
 
+    public ArrayList<Instructor> getInstructors() {
+        return instructors;
+    }
 
-    public void setFaculty(String faculty) {
-        Faculty = faculty;
+    public void setInstructors(ArrayList<Instructor> instructors) {
+        this.instructors = instructors;
     }
 
     public void InstructorInfo()
@@ -51,7 +40,7 @@ public class Instructor extends Users{
      {
          
          System.out.printf("Days%10s%10s%10s%10s%10s%10s%10s%10s%10s%10s%10s%n",
-                 "|","Monday","|","Tuesday" ,"|", "Wednesday","|"
+                 "|","Monday","|","Tuesday" ,"|", "Wendsday","|"
                  ,"Thursday","|","Friday","|");
          System.out.printf("%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n",
                  "09:00-09:50  |","10:00-10:50  |","11:00-11:50  |", 
