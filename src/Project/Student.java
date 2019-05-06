@@ -109,6 +109,7 @@ public class Student extends Users{
          System.out.println("Mail: " +mailAdress);
          System.out.println("Phone Number: " +phoneNumber);
          System.out.println("Scholarship: %"+scholarship);
+         
          if(scholarship==100)
          {
              System.out.println("Tuition: Full Scholarship");

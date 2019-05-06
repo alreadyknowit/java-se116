@@ -17,6 +17,10 @@ public class Instructor extends Users{
         this.instructors=instructors;
         instructorCounter=0;
     }
+    public Instructor()
+    {
+        
+    }
     
     public static int getInstructorCounter() {
         return instructorCounter;
@@ -47,6 +51,4 @@ public class Instructor extends Users{
                  "12:00-12:50  |","13:00-13:50  |","14:00-14:50  |","15:00-15:50  |",
                  "16:00-16:50  |", "17:00-17:50  |");
      }
-    
-
 }

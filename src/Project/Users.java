@@ -18,6 +18,11 @@ public abstract class Users {
         this.name =name;
         this.ID = ID;
     }
+    public Users()
+    {
+        this.name="NoName";
+        this.ID=0;
+    }
      public void setName(String name) {
         this.name = name;
     }
